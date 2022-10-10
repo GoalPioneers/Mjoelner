@@ -3,6 +3,6 @@
 
     interface DeleteMethod
     {
-
+        function delete_method();
     }
 ?>

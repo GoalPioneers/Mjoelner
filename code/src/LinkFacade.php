@@ -1,8 +1,10 @@
 <?php
     namespace IoJaegers\Mjoelner;
 
+    use IoJaegers\Mjoelner\Types\RequestTypes;
 
-    class LinkFacade
+
+    abstract class LinkFacade
     {
         function __construct()
         {

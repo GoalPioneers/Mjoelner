@@ -3,6 +3,6 @@
 
     interface PostMethod
     {
-
+        function post_method();
     }
 ?>

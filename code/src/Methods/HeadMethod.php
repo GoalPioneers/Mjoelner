@@ -3,6 +3,6 @@
 
     interface HeadMethod
     {
-
+        function head_method();
     }
 ?>

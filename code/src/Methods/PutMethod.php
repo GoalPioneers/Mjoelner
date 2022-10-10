@@ -3,6 +3,6 @@
 
     interface PutMethod
     {
-
+        function put_method();
     }
 ?>

@@ -1,7 +1,8 @@
 <?php
-    namespace IoJaegers\Mjoelner;
+    namespace IoJaegers\Mjoelner\Objects;
 
-    class RequestProperty
+
+    class Link
     {
         function __construct()
         {
@@ -12,6 +13,5 @@
         {
 
         }
-
     }
 ?>

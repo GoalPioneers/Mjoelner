@@ -1,7 +1,7 @@
 <?php
-    namespace IoJaegers\Mjoelner;
+    namespace IoJaegers\Mjoelner\Objects;
 
-    class LinkRule
+    class Settings
     {
         function __construct()
         {
@@ -12,6 +12,7 @@
         {
 
         }
+
 
     }
 ?>

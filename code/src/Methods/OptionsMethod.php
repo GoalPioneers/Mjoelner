@@ -3,6 +3,6 @@
 
     interface OptionsMethod
     {
-
+        function options_method();
     }
 ?>

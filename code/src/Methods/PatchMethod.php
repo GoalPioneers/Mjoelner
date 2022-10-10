@@ -3,6 +3,6 @@
 
     interface PatchMethod
     {
-
+        function patch_method();
     }
 ?>

@@ -3,6 +3,6 @@
 
     interface GetMethod
     {
-
+        function get_method();
     }
 ?>

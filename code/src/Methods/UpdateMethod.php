@@ -3,6 +3,6 @@
 
     interface UpdateMethod
     {
-
+        function update_method();
     }
 ?>
