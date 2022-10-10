@@ -1,0 +1,20 @@
+{
+    "name": "io-jaegers/mjoelner",
+    "type": "library",
+    "license": "MIT License",
+    "autoload":
+    {
+        "psr-4":
+        {
+            "IoJaegers\\Mjoelner\\": "code/"
+        }
+    },
+    "authors":
+    [
+        {
+            "name": "Kent Madsen",
+            "email": "kent.vejrup.madsen@designermadsen.dk"
+        }
+    ],
+    "require": {}
+}
