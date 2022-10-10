@@ -6,8 +6,10 @@
     {
         "psr-4":
         {
-            "IoJaegers\\Mjoelner\\": ["src/"],
-            "IoJaegers\\Mjoelner\\Types\\": ["src/Types"],
+            "IoJaegers\\Mjoelner\\": [ "src/" ],
+
+            "IoJaegers\\Mjoelner\\Types\\": [ "src/Types" ],
+            "IoJaegers\\Mjoelner\\Methods": [ "src/Methods" ],
 
             "": "vendor/"
         }
