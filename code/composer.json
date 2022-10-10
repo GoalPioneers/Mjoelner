@@ -6,13 +6,10 @@
     {
         "psr-4":
         {
-            "IoJaegers\\Mjoelner\\": [ "src/" ],
-
-            "IoJaegers\\Mjoelner\\Types\\": [ "src/Types" ],
-            "IoJaegers\\Mjoelner\\Methods": [ "src/Methods" ],
-            "IoJaegers\\Mjoelner\\Objects\\": [ "src/Objects" ],
-
-            "": "vendor/"
+            "IoJaegers\\Mjoelner\\": "src/",
+            "IoJaegers\\Mjoelner\\Types\\": "src/Types",
+            "IoJaegers\\Mjoelner\\Methods\\": "src/Methods",
+            "IoJaegers\\Mjoelner\\Objects\\": "src/Objects"
         }
     },
     "authors":
@@ -22,5 +19,7 @@
             "email": "kent.vejrup.madsen@designermadsen.dk"
         }
     ],
-    "require": {}
+    "require": {
+        "vlucas/phpdotenv": "^5.4"
+    }
 }
