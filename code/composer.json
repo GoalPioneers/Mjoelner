@@ -6,7 +6,10 @@
     {
         "psr-4":
         {
-            "IoJaegers\\Mjoelner\\": "code/"
+            "IoJaegers\\Mjoelner\\": ["src/"],
+            "IoJaegers\\Mjoelner\\Types\\": ["src/Types"],
+
+            "": "vendor/"
         }
     },
     "authors":
