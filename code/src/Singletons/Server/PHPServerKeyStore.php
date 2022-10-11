@@ -1,5 +1,5 @@
 <?php
-    namespace IoJaegers\Mjoelner;
+    namespace IoJaegers\Mjoelner\Server;
 
 
     class PHPServerKeyStore

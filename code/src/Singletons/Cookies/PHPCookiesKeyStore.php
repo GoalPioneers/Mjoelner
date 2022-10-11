@@ -1,8 +1,8 @@
 <?php
-    namespace IoJaegers\Mjoelner;
+    namespace IoJaegers\Mjoelner\Cookies;
 
 
-    class PHPCookieKeyStore
+    class PHPCookiesKeyStore
     {
         function __construct()
         {
@@ -21,7 +21,7 @@
          */
         protected final function retrieveKey( string $value ): mixed
         {
-            return $_SERVER[ $value ];
+            return $_COOKIE[ $value ];
         }
     }
 ?>
