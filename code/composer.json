@@ -7,9 +7,14 @@
         "psr-4":
         {
             "IoJaegers\\Mjoelner\\": "src/",
+
             "IoJaegers\\Mjoelner\\Types\\": "src/Types",
+
             "IoJaegers\\Mjoelner\\Methods\\": "src/Methods",
-            "IoJaegers\\Mjoelner\\Objects\\": "src/Objects"
+            "IoJaegers\\Mjoelner\\Objects\\": "src/Objects",
+
+            "IoJaegers\\Mjoelner\\Singletons\\": "src/Singletons",
+            "IoJaegers\\Mjoelner\\Singletons\\Server": "src/Singletons/Server"
         }
     },
     "authors":

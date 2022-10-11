@@ -9,6 +9,7 @@
 
     $_SERVER['SERVER_PORT'];
     $h = 'REMOTE_HOST';
+
     $s = 'HTTP_ACCEPT_CHARSET';
     $p = 'HTTP_ACCEPT_ENCODING';
     $c = 'HTTP_ACCEPT_LANGUAGE';

@@ -7,6 +7,4 @@
     $v = new Router();
 
 
-    echo $_SERVER['PATH_INFO'] . "t";
-
 ?>

@@ -6,15 +6,7 @@
 
     abstract class LinkFacade
     {
-        function __construct()
-        {
 
-        }
-
-        function __destruct()
-        {
-
-        }
 
     }
 ?>
