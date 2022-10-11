@@ -13,7 +13,7 @@
             "IoJaegers\\Mjoelner\\Methods\\": "src/Methods",
 
             "IoJaegers\\Mjoelner\\Objects\\": "src/Objects",
-            "IoJaegers\\Mjoelner\\Objects\\Base": "src/Objects/Base",
+            "IoJaegers\\Mjoelner\\Objects\\Base": "src/Objects/Text",
 
             "IoJaegers\\Mjoelner\\Singletons\\": "src/Singletons",
 

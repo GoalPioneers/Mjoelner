@@ -9,12 +9,28 @@
         extends OperationString
     {
         /**
+         *
+         */
+        public function __construct()
+        {
+
+        }
+
+        /**
+         * @return void
+         */
+        public function __deconstruct()
+        {
+
+        }
+
+        /**
          * @param string $in
          * @return string
          */
         public function applyOperation( string $in ): string
         {
-            return '';
+            return strtolower( $in );
         }
 
     }
