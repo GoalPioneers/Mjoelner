@@ -7,9 +7,9 @@
     abstract class OperationString
     {
         /**
-         * @param string $str
-         * @return string
+         * @param string $in input String
+         * @return string output
          */
-        public abstract function applyOperation( string $str ): string;
+        public abstract function applyOperation( string $in ): string;
     }
 ?>

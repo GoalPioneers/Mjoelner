@@ -11,8 +11,8 @@
         /**
          *
          */
-        public function __construct( int $begin,
-                                     int $end )
+        public function __construct( int|null $begin,
+                                     int|null $end )
         {
             $this->setBegin( $begin );
             $this->setEnd( $end );
