@@ -5,7 +5,7 @@
     {
         function __construct()
         {
-
+            $this->setKeyStore( new PHPServerKeyStore() );
         }
 
         function __destruct()
@@ -18,17 +18,18 @@
 
         // Accessors
         /**
-         * @return null
+         * @return PHPServerKeyStore|null
          */
-        public function getKeyStore()
+        public function getKeyStore(): ?PHPServerKeyStore
         {
             return $this->keyStore;
         }
 
         /**
-         * @param null $keyStore
+         * @param PHPServerKeyStore|null $keyStore
+         * @return void
          */
-        public function setKeyStore( $keyStore ): void
+        public function setKeyStore( ?PHPServerKeyStore $keyStore ): void
         {
             $this->keyStore = $keyStore;
         }

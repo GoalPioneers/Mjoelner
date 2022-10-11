@@ -75,7 +75,7 @@
          * @param string $value
          * @return mixed
          */
-        protected final function retrieveKey( string $value )
+        protected final function retrieveKey( string $value ): mixed
         {
             return $_SERVER[ $value ];
         }
