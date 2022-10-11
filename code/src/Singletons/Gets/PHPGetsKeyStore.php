@@ -21,7 +21,7 @@
          */
         protected final function retrieveKey( string $value ): mixed
         {
-            return $_COOKIE[ $value ];
+            return $_GET[ $value ];
         }
     }
 ?>
