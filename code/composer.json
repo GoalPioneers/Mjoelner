@@ -14,7 +14,10 @@
             "IoJaegers\\Mjoelner\\Objects\\": "src/Objects",
 
             "IoJaegers\\Mjoelner\\Singletons\\": "src/Singletons",
-            "IoJaegers\\Mjoelner\\Singletons\\Server": "src/Singletons/Server"
+
+            "IoJaegers\\Mjoelner\\Singletons\\Server": "src/Singletons/Server",
+            "IoJaegers\\Mjoelner\\Singletons\\Cookies": "src/Singletons/Cookies",
+            "IoJaegers\\Mjoelner\\Singletons\\Sessions": "src/Singletons/Sessions"
         }
     },
     "authors":

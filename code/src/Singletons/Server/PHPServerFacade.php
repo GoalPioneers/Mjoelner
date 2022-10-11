@@ -1,11 +1,20 @@
 <?php
     namespace IoJaegers\Mjoelner;
 
+
     class PHPServerFacade
     {
         function __construct()
         {
-            $this->setKeyStore( new PHPServerKeyStore() );
+            $this->setKeyStore(
+                new PHPServerKeyStore()
+            );
+
+            $this->setServerDomain(
+                new PHPSServerDomain(
+                    $this->getKeyStore()
+                )
+            );
         }
 
         function __destruct()
@@ -14,7 +23,9 @@
         }
 
         // Variables
-        private $keyStore = null;
+        private ?PHPServerKeyStore $keyStore = null;
+        private ?PHPSServerDomain $serverDomain = null;
+
 
         // Accessors
         /**
@@ -32,6 +43,23 @@
         public function setKeyStore( ?PHPServerKeyStore $keyStore ): void
         {
             $this->keyStore = $keyStore;
+        }
+
+
+        /**
+         * @return PHPSServerDomain|null
+         */
+        public function getServerDomain(): ?PHPSServerDomain
+        {
+            return $this->serverDomain;
+        }
+
+        /**
+         * @param PHPSServerDomain|null $serverDomain
+         */
+        public function setServerDomain( ?PHPSServerDomain $serverDomain ): void
+        {
+            $this->serverDomain = $serverDomain;
         }
     }
 ?>
