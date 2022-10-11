@@ -9,7 +9,15 @@
 
     $v = new Router();
 
+
     $builder = new StringBuilder();
 
-    echo 'result' . $builder->toString();
+    $builder->append(' t');
+    $builder->append('  ');
+    $builder->append(' 23');
+    $builder->append(' //');
+    $builder->append(' 242');
+    $builder->append(' A');
+
+    echo 'result: ' . $builder->toString();
 ?>

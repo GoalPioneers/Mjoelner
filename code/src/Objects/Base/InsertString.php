@@ -12,9 +12,11 @@
         /**
          *
          */
-        public function __construct()
+        public function __construct( int|null $at,
+                                     string|null $str )
         {
-
+            $this->setAt( $at );
+            $this->setStr( $str );
         }
 
         /**
@@ -22,7 +24,8 @@
          */
         function __destruct()
         {
-
+            unset( $this->at );
+            unset( $this->str );
         }
 
         /**
@@ -31,7 +34,10 @@
          */
         public function applyOperation( string $in ): string
         {
-            return '';
+            $new = substr_replace( $in,
+                                   $this->getStr(),
+                                   $this->getAt() );
+            return $new;
         }
 
         // Variables

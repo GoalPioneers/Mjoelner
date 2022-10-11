@@ -13,7 +13,8 @@
          */
         public function __construct()
         {
-            $this->setOperations( array() );
+            $this->setLastIndex( self::zero );
+            $this->extend();
         }
 
         /**
@@ -21,7 +22,31 @@
          */
         function __destruct()
         {
+            unset( $this->buffer );
+            unset( $this->lastIndex );
+        }
 
+        /**
+         * @return void
+         */
+        public final function extend(): void
+        {
+            $this->extend_by_size(
+                self::defaultStringLength
+            );
+        }
+
+        public final function extend_by_size( int $n ): void
+        {
+            if( $this->isBufferNull() )
+            {
+                $this->clear();
+            }
+
+            $b = $this->getBuffer();
+            $b = $b . str_repeat(' ', $n );
+
+            $this->setBuffer( $b );
         }
 
 
@@ -29,53 +54,79 @@
          * @param string $values
          * @return void
          */
-        public function append( string $values ): void
+        public final function append( string $values ): void
         {
+            $sizeOfValues = strlen( $values );
 
+            if( $sizeOfValues == self::zero )
+                return;
+
+            $insertObject = new InsertString( $this->getLastIndex(), $values );
+
+            $this->moveIndex( $sizeOfValues );
+            $this->insert( $insertObject );
+        }
+
+
+        /**
+         * @param DeleteString $deletion
+         * @return void
+         */
+        public final function delete( DeleteString $deletion ): void
+        {
+            $newBuffer = $deletion->applyOperation( $this->getBuffer() );
+            $this->setBuffer( $newBuffer );
         }
 
         /**
-         * @param array $values
+         * @param InsertString $insert
          * @return void
          */
-        public function delete( array $values ): void
+        public final function insert( InsertString $insert ): void
         {
+            $sizeOfBuffer = $this->sizeOfBuffer();
+            $sizeOfInsert = $insert->sizeOfStr();
 
+            $expectation = $insert->getAt() + $sizeOfInsert;
+
+            if( $sizeOfBuffer < $expectation )
+            {
+                $delta = $expectation - $sizeOfBuffer;
+                $this->extend_by_size( $delta );
+            }
+
+            $endValue = $insert->applyOperation( $this->getBuffer() );
+            $this->setBuffer( $endValue );
         }
+
 
         /**
-         * @param int $at
-         * @param string $str
          * @return void
          */
-        public function insert( int $at, string $str ): void
+        public function clear(): void
         {
-
+            $this->setBuffer( '' );
         }
+
 
         /**
          * @return string|null
          */
         public function toString(): ?string
         {
-            return null;
-        }
-
-        /**
-         * @return void
-         */
-        public final function clearCache()
-        {
-            $this->cache = null;
+            return substr( $this->getBuffer(),
+                        0,
+                           $this->getLastIndex() );
         }
 
         // Variables
         private ?string $buffer = null;
-        private ?string $cache  = null;
 
-        private ?array $operations;
+            // End of line
+        private ?int $lastIndex = null;
 
-        private static int $defaultStringLength = 25;
+        private const defaultStringLength = 25;
+        private const zero = 0;
 
 
 
@@ -91,89 +142,61 @@
         /**
          * @param string|null $buffer
          */
-        public final function setBuffer(?string $buffer ): void
+        public final function setBuffer( ?string $buffer ): void
         {
             $this->buffer = $buffer;
         }
 
         /**
+         * @return int
+         */
+        public final function sizeOfBuffer(): int
+        {
+            return strlen( $this->getBuffer() );
+        }
+
+        /**
          * @return bool
          */
-        public final function isLineNull(): bool
+        public final function isBufferNull(): bool
         {
             return $this->buffer == null;
         }
 
         /**
-         * @return string|null
+         * @return int|null
          */
-        public final function getCache(): ?string
+        public final function getLastIndex(): ?int
         {
-            return $this->cache;
+            return $this->lastIndex;
         }
 
         /**
-         * @param string|null $cache
+         * @param int|null $lastIndex
          */
-        public final function setCache( ?string $cache ): void
+        public final function setLastIndex( ?int $lastIndex ): void
         {
-            $this->cache = $cache;
+            $this->lastIndex = $lastIndex;
         }
 
         /**
-         * @return bool
+         * @param int $increaseWith
+         * @return void
          */
-        public final function isCacheNull(): bool
+        public final function moveIndex( int $increaseWith ): void
         {
-            return $this->cache == null;
-        }
+            $i = $this->getLastIndex();
+            $i = $i + $increaseWith;
 
-        /**
-         * @return array|null
-         */
-        public function getOperations(): ?array
-        {
-            return $this->operations;
-        }
-
-        /**
-         * @param array|null $operations
-         */
-        public function setOperations( ?array $operations ): void
-        {
-            $this->operations = $operations;
+            $this->setLastIndex( $i );
         }
 
         /**
          * @return bool
          */
-        public function isOperationsNull(): bool
+        public final function isLastIndexNull(): bool
         {
-            return $this->operations == null;
-        }
-
-        /**
-         * @return bool
-         */
-        public function isOperationsEmpty(): bool
-        {
-            return count( $this->operations );
-        }
-
-        /**
-         * @return int
-         */
-        public static function getDefaultStringLength(): int
-        {
-            return self::$defaultStringLength;
-        }
-
-        /**
-         * @param int $defaultStringLength
-         */
-        public static function setDefaultStringLength( int $defaultStringLength ): void
-        {
-            self::$defaultStringLength = $defaultStringLength;
+            return $this->lastIndex == null;
         }
     }
 ?>

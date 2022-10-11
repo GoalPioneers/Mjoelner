@@ -11,9 +11,11 @@
         /**
          *
          */
-        public function __construct()
+        public function __construct( int $begin,
+                                     int $end )
         {
-
+            $this->setBegin( $begin );
+            $this->setEnd( $end );
         }
 
         /**
@@ -21,12 +23,14 @@
          */
         function __destruct()
         {
-
+            unset( $this->begin );
+            unset( $this->end );
         }
 
         // Variables
         private ?int $begin = null;
         private ?int $end = null;
+
 
         /**
          * @param string $in
@@ -34,7 +38,9 @@
          */
         public function applyOperation( string $in ): string
         {
-            return '';
+            return substr( $in,
+                           $this->begin,
+                           $this->end );
         }
 
         /**
