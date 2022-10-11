@@ -1,0 +1,3 @@
+[submodule "code/modules/odin"]
+	path = code/modules/odin
+	url = https://github.com/IO-Jaegers/Odin.git
