@@ -4,7 +4,7 @@
     use IoJaegers\Mjoelner\RouterController
         as Router;
 
-    use \IoJaegers\Mjoelner\Objects\Base\StringBuilder
+    use \IoJaegers\Mjoelner\Objects\Text\StringBuilder
         as StringBuilder;
 
     $v = new Router();

@@ -1,11 +1,11 @@
 <?php
-    namespace IoJaegers\Mjoelner\Objects\Base;
+    namespace IoJaegers\Mjoelner\Objects\Text\Operations;
 
 
     /**
-     * 
+     *
      */
-    class LowerString
+    class UpperString
         extends OperationString
     {
         /**
@@ -30,7 +30,7 @@
          */
         public function applyOperation( string $in ): string
         {
-            return strtolower( $in );
+            return strtoupper( $in );
         }
 
     }

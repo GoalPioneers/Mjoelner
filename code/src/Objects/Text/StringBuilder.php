@@ -1,5 +1,8 @@
 <?php
-    namespace IoJaegers\Mjoelner\Objects\Base;
+    namespace IoJaegers\Mjoelner\Objects\Text;
+
+    use IoJaegers\Mjoelner\Objects\Text\Operations\DeleteString;
+    use IoJaegers\Mjoelner\Objects\Text\Operations\InsertString;
 
 
     /**
