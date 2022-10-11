@@ -5,16 +5,63 @@
     class PHPSServerDomain
     {
         // Constructor
+        /**
+         * @param $keyStore
+         */
         function __construct( $keyStore )
         {
             $this->setKeyStore( $keyStore );
         }
 
+        /**
+         *
+         */
         function __destruct()
         {
 
         }
 
+        // Server Settings
+        /**
+         * @return string
+         */
+        public final function ServerAddress(): string
+        {
+            return self::getKeyStore()->retrieveServerAddress();
+        }
+
+        /**
+         * @return string
+         */
+        public final function HTTPProtocol(): string
+        {
+            return self::getKeyStore()->retrieveHTTPProtocol();
+        }
+
+        // Related to Request URL
+        /**
+         * @return string
+         */
+        public final function Hostname(): string
+        {
+            return self::getKeyStore()->retrieveHostname();
+        }
+
+        /**
+         * @return string
+         */
+        public final function Query(): string
+        {
+            return self::getKeyStore()->retrieveQuery();
+        }
+
+        /**
+         * @return string
+         */
+        public final function Uri(): string
+        {
+            return self::getKeyStore()->retrieveUri();
+        }
 
         // Variables
         private ?PHPServerKeyStore $keyStore = null;
@@ -24,7 +71,7 @@
         /**
          * @return PHPServerKeyStore|null
          */
-        public function getKeyStore(): ?PHPServerKeyStore
+        public final function getKeyStore(): ?PHPServerKeyStore
         {
             return $this->keyStore;
         }
@@ -32,7 +79,7 @@
         /**
          * @param PHPServerKeyStore|null $keyStore
          */
-        public function setKeyStore( ?PHPServerKeyStore $keyStore ): void
+        public final function setKeyStore( ?PHPServerKeyStore $keyStore ): void
         {
             $this->keyStore = $keyStore;
         }
