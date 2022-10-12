@@ -77,16 +77,18 @@
 
         /**
          * @param int|null $begin
+         * @return void
          */
-        public final function setBegin( ?int $begin ): void
+        public final function setBegin( int|null $begin ): void
         {
             $this->begin = $begin;
         }
 
         /**
          * @param int|null $end
+         * @return void
          */
-        public final function setEnd( ?int $end ): void
+        public final function setEnd( int|null $end ): void
         {
             $this->end = $end;
         }

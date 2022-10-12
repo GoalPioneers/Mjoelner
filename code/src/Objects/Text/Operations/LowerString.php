@@ -13,9 +13,11 @@
         /**
          *
          */
-        public function __construct()
+        public function __construct( null|int $begin,
+                                     null|int $end )
         {
-
+            $this->setBegin( $begin );
+            $this->setEnd( $end );
         }
 
         /**
@@ -46,11 +48,6 @@
                 $retrievedText = strtolower( $retrievedText );
                 echo "\n : " . $retrievedText;
             }
-            else
-            {
-
-            }
-
 
             return $retrievedText;
         }

@@ -18,7 +18,7 @@
     $builder->append('ASDASFDDFAAFSDDAFS:');
     $builder->append(':jnkjekfjefjknjkewfjjnks');
 
-    $builder->toLower(new LowerString());
+    $builder->toLower( new LowerString(null, null) );
 
     echo 'result: ' . $builder->toString();
 ?>

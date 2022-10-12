@@ -120,7 +120,8 @@
          */
         public final function toLower( LowerString $lower ): void
         {
-            echo "t";
+            $new = $lower->applyOperation( $this->buffer );
+            $this->setBuffer( $new );
         }
 
 
