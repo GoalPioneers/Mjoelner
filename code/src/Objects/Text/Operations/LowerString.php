@@ -29,23 +29,38 @@
          * @param string $in
          * @param int $begin
          * @param int $end
-         * @return mixed|void
+         * @return string
          */
         protected function section( string $in,
                                     int $begin,
-                                    int $end )
+                                    int $end ):
+            string
         {
-            // TODO: Implement section() method.
+            $retrievedText = null;
+
+            if( $end == null )
+            {
+                $retrievedText = substr( $in, $begin );
+                $retrievedText = strtolower( $retrievedText );
+                echo "\n : " . $retrievedText;
+            }
+            else
+            {
+
+            }
+
+
+            return $retrievedText;
         }
 
         /**
          * @param string $in
-         * @return mixed|void
-         *
+         * @return string
          */
-        protected function whole( string $in )
+        protected function whole( string $in ):
+            string
         {
-            // TODO: Implement whole() method.
+            return strtolower( $in );
         }
 
 

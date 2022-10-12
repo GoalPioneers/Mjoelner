@@ -24,15 +24,30 @@
 
         }
 
-
-        protected function section(string $in, int $begin, int $end)
+        /**
+         * @param string $in
+         * @param int $begin
+         * @param int $end
+         * @return string
+         */
+        protected function section( string $in,
+                                    int $begin,
+                                    int $end ):
+            string
         {
-            // TODO: Implement section() method.
+
+            return "";
         }
 
-        protected function whole(string $in)
+        /**
+         * @param string $in
+         * @return string
+         *
+         */
+        protected function whole( string $in ):
+            string
         {
-            // TODO: Implement whole() method.
+            return strtoupper( $in );
         }
     }
 ?>

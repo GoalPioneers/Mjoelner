@@ -1,6 +1,10 @@
 <?php
     namespace IoJaegers\Mjoelner\Objects\Text\Operations;
 
+    use IoJaegers\Mjoelner\Objects\Text\Operations\Templates\OperationString;
+
+
+
     /**
      *
      */

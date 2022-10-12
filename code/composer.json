@@ -17,6 +17,7 @@
 
             "IoJaegers\\Mjoelner\\Objects\\Text": "src/Objects/Text",
             "IoJaegers\\Mjoelner\\Objects\\Text\\Operations": "src/Objects/Text/Operations",
+            "IoJaegers\\Mjoelner\\Objects\\Text\\Operations/Templates": "src/Objects/Text/Operations/Templates",
 
             "IoJaegers\\Mjoelner\\Singletons\\": "src/Singletons",
 

@@ -4,15 +4,17 @@
     use IoJaegers\Mjoelner\RouterController
         as Router;
 
-    use \IoJaegers\Mjoelner\Objects\Text\StringBuilder
+    use \IoJaegers\Mjoelner\Objects\Text\StringBuilderScheme
         as StringBuilder;
 
-    use IoJaegers\Mjoelner\Objects\Text\Operations\DeleteString;
 
     $v = new Router();
 
 
     $builder = new StringBuilder();
+
+    $builder->append('ASDASFDDFAAFSDDAFS:');
+    $builder->append(':jnkjekfjefjknjkewfjjnks');
 
 
     echo 'result: ' . $builder->toString();

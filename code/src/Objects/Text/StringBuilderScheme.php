@@ -4,11 +4,14 @@
     use IoJaegers\Mjoelner\Objects\Text\Operations\DeleteString;
     use IoJaegers\Mjoelner\Objects\Text\Operations\InsertString;
 
+    use IoJaegers\Mjoelner\Objects\Text\Operations\LowerString;
+    use IoJaegers\Mjoelner\Objects\Text\Operations\UpperString;
+
 
     /**
      *
      */
-    class StringBuilder
+    class StringBuilderScheme
     {
         //
         /**
@@ -101,6 +104,25 @@
             $endValue = $insert->applyOperation( $this->getBuffer() );
             $this->setBuffer( $endValue );
         }
+
+        /**
+         * @param UpperString $upper
+         * @return void
+         */
+        public final function ToUpper( UpperString $upper ): void
+        {
+
+        }
+
+        /**
+         * @param LowerString $lower
+         * @return void
+         */
+        public final function ToLower( LowerString $lower ): void
+        {
+
+        }
+
 
 
         /**
