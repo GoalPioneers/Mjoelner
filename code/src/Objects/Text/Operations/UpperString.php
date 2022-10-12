@@ -6,7 +6,7 @@
      *
      */
     class UpperString
-        extends OperationString
+        extends TextTransformationString
     {
         /**
          *
@@ -24,14 +24,15 @@
 
         }
 
-        /**
-         * @param string $in
-         * @return string
-         */
-        public function applyOperation( string $in ): string
+
+        protected function section(string $in, int $begin, int $end)
         {
-            return strtoupper( $in );
+            // TODO: Implement section() method.
         }
 
+        protected function whole(string $in)
+        {
+            // TODO: Implement whole() method.
+        }
     }
 ?>

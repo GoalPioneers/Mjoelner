@@ -6,7 +6,7 @@
      * 
      */
     class LowerString
-        extends OperationString
+        extends TextTransformationString
     {
         /**
          *
@@ -24,14 +24,30 @@
 
         }
 
+
         /**
          * @param string $in
-         * @return string
+         * @param int $begin
+         * @param int $end
+         * @return mixed|void
          */
-        public function applyOperation( string $in ): string
+        protected function section( string $in,
+                                    int $begin,
+                                    int $end )
         {
-            return strtolower( $in );
+            // TODO: Implement section() method.
         }
+
+        /**
+         * @param string $in
+         * @return mixed|void
+         *
+         */
+        protected function whole( string $in )
+        {
+            // TODO: Implement whole() method.
+        }
+
 
     }
 ?>

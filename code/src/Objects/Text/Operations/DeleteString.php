@@ -38,9 +38,13 @@
          */
         public function applyOperation( string $in ): string
         {
-            return substr( $in,
-                           $this->begin,
-                           $this->end );
+            $length = $this->calculateLength( $this->getBegin(),
+                                              $this->getEnd() );
+
+            return substr_replace( $in,
+                                   " ",
+                                   $this->begin,
+                                   $length );
         }
 
         /**
