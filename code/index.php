@@ -7,6 +7,8 @@
     use \IoJaegers\Mjoelner\Objects\Text\StringBuilderScheme
         as StringBuilder;
 
+    use \IoJaegers\Mjoelner\Objects\Text\Operations\LowerString;
+
 
     $v = new Router();
 
@@ -16,6 +18,7 @@
     $builder->append('ASDASFDDFAAFSDDAFS:');
     $builder->append(':jnkjekfjefjknjkewfjjnks');
 
+    $builder->toLower(new LowerString());
 
     echo 'result: ' . $builder->toString();
 ?>

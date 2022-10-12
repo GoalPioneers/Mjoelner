@@ -109,7 +109,7 @@
          * @param UpperString $upper
          * @return void
          */
-        public final function ToUpper( UpperString $upper ): void
+        public final function toUpper( UpperString $upper ): void
         {
 
         }
@@ -118,9 +118,9 @@
          * @param LowerString $lower
          * @return void
          */
-        public final function ToLower( LowerString $lower ): void
+        public final function toLower( LowerString $lower ): void
         {
-
+            echo "t";
         }
 
 
